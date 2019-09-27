@@ -1,0 +1,130 @@
+/* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 40px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: #F57513;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  background-color: #F57513;
+  color: white;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+body{
+	background-color: #BF5300;
+}
+html, body {
+    height: 100%;
+}
+body {
+    background-image: linear-gradient(90deg,
+        #59411C 20%,
+        #BF5300 80%);
+}
+h3{
+	position: absolute;
+font-family: Mosk;
+font-size: 50px;
+line-height: 88.1%;
+top: 180px;
+padding-left: 35px;
+/* or 63px */
+
+text-transform: capitalize;
+
+color: #F57513;
+
+border: 0.0px solid #000000;
+box-sizing: border-box;
+}
+#menu-outer {
+	height: 84px;
+	background: url() repeat-x;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;}
+	ul#horizontal-list {
+	min-width: 696px;
+	list-style: none;
+	padding-top: 0px;
+	word-spacing: 20px;
+	position: absolute;
+	top: 350px;
+	
+	}
+	ul#horizontal-list li {
+		display: inline;
+    font-size: 25px;
+    font-family: mosk;
+    font-weight: bold;
+
+	}
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: white;
+  text-align: center;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #59411C;
+  color: white;
+  text-align: center;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+/* style the horizontal list */
