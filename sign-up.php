@@ -1,3 +1,51 @@
+<?php
+  require 'includes/config.php';
+
+  if(isset($_POST['register'])) {
+    $errMsg = '';
+
+    // Get data from FROM
+    $fullname = $_POST['fullname'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];   
+    $password = $_POST['password'];
+    $secretpin = $_POST['secretpin'];
+
+    if($fullname == '')
+      $errMsg = 'Enter your fullname';
+    if($username == '')
+      $errMsg = 'Enter username';
+    if($password == '')
+      $errMsg = 'Enter password'; 
+    if($email == '')
+      $errMsg = 'Enter email';
+    if($secretpin == '')
+      $errMsg = 'Enter a sercret pin number';
+
+    if($errMsg == ''){
+      try {
+        $stmt = $connect->prepare('INSERT INTO pdo (fullname, username, email, password, secretpin) VALUES (:fullname, :username, :password, :secretpin)');
+        $stmt->execute(array(
+          ':fullname' => $fullname,
+          ':username' => $username,
+          ':email' => $email;
+          ':password' => $password,
+          ':secretpin' => $secretpin
+          ));
+        header('Location: register.php?action=joined');
+        exit;
+      }
+      catch(PDOException $e) {
+        echo $e->getMessage();
+      }
+    }
+  }
+
+  if(isset($_GET['action']) && $_GET['action'] == 'joined') {
+    $errMsg = 'Registration successfull. Now you can <a href="login.php">login</a>';
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +55,11 @@
 </head>
 <header>
 <div class="header">
-    <div class="logo">
-    <a href="index.html"><img
-        src="https://res.cloudinary.com/enema/image/upload/v1569433441/Ariadne_Class_pnlixb.png"
-        style="width: 110px;" alt="logo">
-    </a>
-    </div>
-    <div class="topnav" id="myTopnav">
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()"><img src="https://res.cloudinary.com/siyfa/image/upload/v1568922461/ovqrbsa6t7nhghflejve.png" style="width: 30px;">
-        </a>
-        <a href="sign-up.html">Login</a>
-        <a href="#">Contact Us</a>
-        <a href="#">FAQ</a>
-        <a href="#">Courses</a>
-        <a href="about-us.html">How it works</a>
-        <a href="class.html">Create Class</a>
-        <a href="#">Home</a>
-  </div>
-  </div>  
+
+      <?php
+  include "header.php";?>
+ 
+    </div>  
       <script>
           function myFunction() {
             var x = document.getElementById("myTopnav");
@@ -41,7 +76,7 @@
     <h2>Welcome to Ariadne Class, <br>enrol today and enjoy the definiation<br> of online education.</h2>
   </div>
 
-<form action="action_page.php" method="post">
+<form action="" method="post">
   <div class="imgcontainer">
     <img src="https://res.cloudinary.com/enema/image/upload/v1569433441/Ariadne_Class_pnlixb.png" alt="Avatar" class="avatar" height="100" width="50">
   </div>
