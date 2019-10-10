@@ -7,11 +7,11 @@
     <div class="topnav" id="myTopnav">
       <a href="javascript:void(0);" class="icon" onclick="myFunction()"><img src="https://res.cloudinary.com/siyfa/image/upload/v1568922461/ovqrbsa6t7nhghflejve.png" style="width: 30px;">
         </a>
+        <a href="homepage.php">Home</a>
+        <a href="class.php">Create Class</a>
+        <a href="accessclass.php">Courses</a>
         <a href="sign-up.php">Sign Up</a>
         <a href="#">Contact Us</a>
         <a href="#">FAQ</a>
-        <a href="#">Courses</a>
         <a href="about-us.php">How it works</a>
-        <a href="class.php">Create Class</a>
-        <a href="#">Home</a>
   </div>
